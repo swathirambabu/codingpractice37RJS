@@ -52,15 +52,15 @@ const VaccinationCoverage = props => {
           }}
         />
         <Bar
-          dataKey="dose 1"
-          name="Dose1"
+          dataKey="dose1"
+          name="Dose 1"
           fill="#5a8dee"
           barSize="20%"
           radius={[10, 10, 0, 0]}
         />
         <Bar
-          dataKey="dose 2"
-          name="Dose2"
+          dataKey="dose2"
+          name="Dose 2"
           fill=" #f54394"
           barSize="20%"
           radius={[5, 5, 0, 0]}

@@ -7,11 +7,13 @@ import VaccinationByAge from '../VaccinationByAge'
 import VaccinationByGender from '../VaccinationByGender'
 import './index.css'
 
+
+
 const apiStatusConstants = {
   initial: 'INITIAL',
   success: 'SUCCESS',
   failure: 'FAILURE',
-  inProgress: 'INPROGRESS',
+  inProgress: 'IN_PROGRESS',
 }
 class CowinDashboard extends Component {
   state = {
@@ -25,7 +27,8 @@ class CowinDashboard extends Component {
 
   getVaccinationData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
-    const response = await fetch(`https://apis.ccbp.in/covid-vaccination-data`)
+    const vaccinationDataApiUrl ='https://apis.ccbp.in/covid-vaccination-data'
+    const response = await fetch(vaccinationDataApiUrl)
     if (response.ok) {
       const fetchedData = await response.json()
       const updatedData = {
@@ -59,7 +62,7 @@ class CowinDashboard extends Component {
         className="failure-image"
         alt="failure view"
       />
-      <h1 className="failure-heading">Something Went Wrong</h1>
+      <h1 className="failure-heading">Something went wrong</h1>
     </div>
   )
 
@@ -69,7 +72,7 @@ class CowinDashboard extends Component {
     return (
       <>
         <VaccinationCoverage
-          vaccinationCoverageDetails={vaccinationData.vaccinationCoverage}
+          vaccinationCoverageDetails={vaccinationData.last7DaysVaccination}
         />
 
         <VaccinationByGender
