@@ -1,4 +1,3 @@
-// Write your code here
 import {BarChart, Bar, XAxis, YAxis, Legend} from 'recharts'
 
 import './index.css'
@@ -10,13 +9,11 @@ const VaccinationCoverage = props => {
     }
     return number.toString()
   }
-
   const {vaccinationCoverageDetails} = props
 
   return (
-    <div className="container">
-      <h1 className="heading">Vaccination Coverage</h1>
-
+    <div className="vaccination-by-coverage-container">
+      <h1 className="vaccination-by-coverage-heading">Vaccination Coverage</h1>
       <BarChart
         width={900}
         height={400}
@@ -37,7 +34,7 @@ const VaccinationCoverage = props => {
         <YAxis
           tickFormatter={dataFormatter}
           tick={{
-            stroke: '#5a8dee',
+            stroke: '#6c757d',
             strokeWidth: 0.5,
             fontSize: 15,
             fontFamily: 'Roboto',
@@ -55,15 +52,15 @@ const VaccinationCoverage = props => {
           dataKey="dose1"
           name="Dose 1"
           fill="#5a8dee"
-          barSize="20%"
           radius={[10, 10, 0, 0]}
+          barSize="20%"
         />
         <Bar
           dataKey="dose2"
           name="Dose 2"
-          fill=" #f54394"
-          barSize="20%"
+          fill="#f54394"
           radius={[5, 5, 0, 0]}
+          barSize="20%"
         />
       </BarChart>
     </div>

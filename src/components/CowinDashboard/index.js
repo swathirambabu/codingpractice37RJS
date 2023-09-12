@@ -7,8 +7,6 @@ import VaccinationByAge from '../VaccinationByAge'
 import VaccinationByGender from '../VaccinationByGender'
 import './index.css'
 
-
-
 const apiStatusConstants = {
   initial: 'INITIAL',
   success: 'SUCCESS',
@@ -27,7 +25,7 @@ class CowinDashboard extends Component {
 
   getVaccinationData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
-    const vaccinationDataApiUrl ='https://apis.ccbp.in/covid-vaccination-data'
+    const vaccinationDataApiUrl = 'https://apis.ccbp.in/covid-vaccination-data'
     const response = await fetch(vaccinationDataApiUrl)
     if (response.ok) {
       const fetchedData = await response.json()
